@@ -12,7 +12,7 @@ int main()
 
     // 步骤3：动态加载dll到内存中,如：
     // LoadLibrary函数会先从当前目录寻找，然后在系统目录寻找
-    HINSTANCE hModule = LoadLibrary((LPCWSTR)"MyDLL.dll");
+    HINSTANCE hModule = LoadLibrary(TEXT("MyDLL.dll"));
 
     // 步骤4：获取函数地址,如：
     myAdd = (lpAdd)GetProcAddress(hModule, "ADD");
@@ -23,6 +23,5 @@ int main()
 
     // 步骤6：释放动态链接库,如：
     FreeLibrary(hModule);
-
     return 0;
 }
